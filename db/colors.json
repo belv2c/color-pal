@@ -1,0 +1,48 @@
+{
+	"palettes": {
+		"palette0": {
+			"paletteId": 0,
+			"name": "analogous",
+			"hex1": "#ACDD55",
+			"hex2": "#68DD55",
+			"hex3": "#55DD86",
+			"hex4": "#55DDCA",
+			"hex5": "#55ACDD",
+			"uid": "fasdfasdfafas313123xxs",
+			"isFavorite": "true"
+		},
+		"palette1": {
+			"paletteId": 1,
+			"name": "analogous",
+			"hex1": "#922482",
+			"hex2": "#92244B",
+			"hex3": "#923424",
+			"hex4": "#829224",
+			"hex5": "#4B9224",
+			"uid": "fasdfasdfafas313123xxs",
+			"isFavorite": "true"
+		},
+		"palette2": {
+			"paletteId": 2,
+			"name": "analogous2",
+			"hex1": "#922482",
+			"hex2": "#92244B",
+			"hex3": "#923424",
+			"hex4": "#829224",
+			"hex5": "#4B9224",
+			"uid": "fasdfasdfafas313123xxs",
+			"isFavorite": "true"
+		},
+		"palette3": {
+			"paletteId": 3,
+			"name": "analogous3",
+			"hex1": "#F2E013",
+			"hex2": "#CCF213",
+			"hex3": "#94F213",
+			"hex4": "#5DF213",
+			"hex5": "#25F213",
+			"uid": "fasdfasdfafas313123xxs",
+			"isFavorite": "true"
+		}
+	}
+}
