@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Color Pal</title>
+	<script src="https://use.fontawesome.com/0f643a1640.js"></script>
+	<link rel="stylesheet" type="text/css" href="./lib/node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./styles/main.css">
+</head>
+<body ng-app="ColorPalApp">
+	<div ng-include="'./partials/navbar.html'"></div>
+	<div ng-view></div>
+
+
+<!-- FIREBASE AND NODE MODULE SCRIPTS -->
+<script src="https://www.gstatic.com/firebasejs/4.7.0/firebase.js"></script>
+<script type="text/javascript" src="./lib/node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="./lib/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./lib/node_modules/angular/angular.min.js"></script>
+<script type="text/javascript" src="./lib/node_modules/angular-route/angular-route.min.js"></script>
+<script type="text/javascript" src="./lib/node_modules/angular-animate/angular-animate.min.js"></script>
+<script type="text/javascript" src="./lib/node_modules/angular-sanitize/angular-sanitize.min.js"></script>
+
+<!-- ANGULAR APP SCRIPTS -->
+<script type="text/javascript" src="./javascripts/app.js"></script>
+<script type="text/javascript" src="./javascripts/AppConstants.js"></script>
+<script type="text/javascript" src="./javascripts/AppConfig.js"></script>
+
+<!-- ANGULAR SERVICE SCRIPTS -->
+<script type="text/javascript" src="./javascripts/services/AuthService.js"></script>
+<script type="text/javascript" src="./javascripts/services/PaletteService.js"></script>
+
+<!-- ANGULAR CTRL SCRIPTS -->
+<script type="text/javascript" src="./javascripts/controllers/AuthCtrl.js"></script>
+<script type="text/javascript" src="./javascripts/controllers/InfoCtrl.js"></script>
+<script type="text/javascript" src="./javascripts/controllers/MyPalettesCtrl.js"></script>
+<script type="text/javascript" src="./javascripts/controllers/NavCtrl.js"></script>
+<script type="text/javascript" src="./javascripts/controllers/ViewCtrl.js"></script>
+
+
+</body>
+</html>
