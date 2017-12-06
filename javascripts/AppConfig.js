@@ -1,9 +1,35 @@
 "use strict";
 
-// runs one time per application after the app config
-app.run(function( $rootScope, $location, FIREBASE_CONFIG){
+// calls isAuthenticated in AuthService and wraps the call in a function
+// if isAuthenticated = true it resolves and if false it rejects
+let isAuth = (AuthService) => new Promise ((resolve, reject) => {
+	if (AuthService.isAuthenticated()){
+		resolve();
+	} else {
+		reject();
+	}
+});
+
+
+//runs one time per application after the app config
+app.run(function( $rootScope, $location, FIREBASE_CONFIG, AuthService){
 	firebase.initializeApp(FIREBASE_CONFIG);
 
+
+$rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
+	var logged = AuthService.isAuthenticated();
+	
+	var appTo;
+
+	if (currRoute.originalPath) {
+		appTo = currRoute.originalPath.indexOf('/auth') !== -1;
+	}
+
+	if (!appTo && !logged) {
+		event.preventDefault();
+		$location.path('/auth');
+	}
+  });
 });
 
 // routes
@@ -17,17 +43,20 @@ app.config(function($routeProvider){
 		.when("/info", {
 			// path to html file and path to javascript file
 			templateUrl: 'partials/info.html',
-			controller: 'InfoCtrl'
+			controller: 'InfoCtrl',
+			resolve: {isAuth}
 		})
 		.when("/mypalettes", {
 			// path to html file and path to javascript file
 			templateUrl: 'partials/mypalettes.html',
-			controller: 'MyPalettesCtrl'
+			controller: 'MyPalettesCtrl',
+			resolve: {isAuth}
 		})
 		.when("/view", {
 			// path to html file and path to javascript file
 			templateUrl: 'partials/view.html',
-			controller: 'ViewCtrl'
+			controller: 'ViewCtrl',
+			resolve: {isAuth}
 		})
 		
 		// if your user tries to type in any other route besides what you've defined you can redirect them
