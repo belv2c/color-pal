@@ -12,8 +12,15 @@ let isAuth = (AuthService) => new Promise ((resolve, reject) => {
 
 
 //runs one time per application after the app config
-app.run(function( $rootScope, $location, FIREBASE_CONFIG, AuthService){
+app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService, ColorApiService){
 	firebase.initializeApp(FIREBASE_CONFIG);
+
+	ColorApiService.colorConfiguration().then((result) => {
+		$rootScope.uid = result.data;
+		console.log(result.data);
+	}).catch((error) => {
+		console.log("error in colorConfiguration", error);
+	});
 
 
 $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
