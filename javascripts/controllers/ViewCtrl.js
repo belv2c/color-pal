@@ -13,6 +13,15 @@ app.controller("ViewCtrl", function($scope, $rootScope, PaletteService) {
 	getThePalettes();
     
 
+    $scope.color = '#FF0000';
+
+// options - if a list is given then choose one of the items. The first item in the list will be the default
+$scope.options = {
+    // html attributes
+
+    // color
+    format: 'hex',
+ };
 
 
 });
