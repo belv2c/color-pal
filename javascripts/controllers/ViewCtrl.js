@@ -12,7 +12,13 @@ app.controller("ViewCtrl", function($scope, $rootScope, PaletteService) {
 	};
 	getThePalettes();
     
-
-
+	// COLOR PICKER
+    $scope.color = '#FF0000';
+	$scope.options = {
+	    // html attributes
+	    format: 'hex',
+	    placeholder: 'Pick a color',
+	    round: 'true'
+	 };
 
 });
