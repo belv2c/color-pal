@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("ViewCtrl", function($scope, $rootScope, PaletteService) {
+app.controller("ViewCtrl", function($scope, $rootScope, ColorService, PaletteService) {
 
 	const getThePalettes = () => {
 		PaletteService.getPalettes($rootScope.uid).then((results) => {
@@ -11,6 +11,26 @@ app.controller("ViewCtrl", function($scope, $rootScope, PaletteService) {
 		});
 	};
 	getThePalettes();
+
+	const getTheColors = () => {
+		ColorService.getColors($rootScope.uid).then((results) => {
+			$scope.colors = results;
+		}).catch((err) => {
+			console.log("error in getTheColors", err);
+		});
+	};
+	getTheColors();
+
+
+	$scope.paletteObject = (newpalette) => {
+		$rootScope.updatedPalette = {
+			"mode": newpalette.mode,
+			"count": newpalette.count,
+			"isFavorite": newpalette.isFavorite,
+			"uid": $rootScope.uid
+		};
+	};
+
     
 	// COLOR PICKER
     $scope.color = '#FF0000';
