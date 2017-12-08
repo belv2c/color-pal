@@ -31,6 +31,18 @@ app.controller("ViewCtrl", function($scope, $rootScope, ColorService, PaletteSer
 		};
 	};
 
+	$scope.colorObject = (newcolor) => {
+		$rootScope.updatedColor = {
+			"paletteId": newcolor.paletteId,
+			"name": newcolor.name,
+			"hex": newcolor.hex,
+			"clean": $rootScope.clean,
+			"image": $rootScope.image,
+			"uid": $rootScope.uid
+		};
+	};
+
+
     
 	// COLOR PICKER
     $scope.color = '#FF0000';

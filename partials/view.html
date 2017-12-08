@@ -5,18 +5,17 @@
 	options="options"
 ></color-picker>
 
-
-	
-	<div id="pins" class="container">
+	<div id="palettes" class="container">
 		<div ng-repeat="newPalette in palettes" class="col-md-4">
-
 			<div class="thumbnail palette">
-				<h4 ng-model="pinObject.board">{{newPalette.mode}}</h4>
-
-
-				
+				<h4>{{newPalette.mode}}</h4>
 			</div>
 		</div>
 	  </div>
+
+<div id="colors" class="container">
+		<div ng-repeat="newColor in colors" class="col-md-4">
+			<div class="thumbnail color">
+				<h4>{{newColor.name}}</h4>
+			</div>
 	</div>
-</div>
