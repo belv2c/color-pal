@@ -35,11 +35,14 @@ app.controller("ViewCtrl", function($scope, $rootScope, $routeParams, ColorServi
 $scope.apiPalettes = [];
 
 	$scope.eventApi = {
- 		   onChange:  function(api, color, $event) {
+ 		   onChange:  function(api, color, palettes, $event) {
+ 		   	
     	ColorApiService.colorConfiguration(color).then((results) => {
+
     		$scope.apiPalettes = results.data;
-    		let saved = PaletteService.createPaletteObject(results.data);
-    		console.log(saved);
+    		palettes.isFavorite = false;
+    		let apiPaletteObject = PaletteService.createPaletteObject(results.data);
+    		console.log(apiPaletteObject);
     	}).catch((err) => {
     		console.log("error in eventApi", err);
     	});
