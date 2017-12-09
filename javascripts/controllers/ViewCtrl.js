@@ -1,6 +1,7 @@
 "use strict";
 
-app.controller("ViewCtrl", function($scope, $rootScope, ColorService, PaletteService, ColorApiService) {
+app.controller("ViewCtrl", function($scope, $rootScope, $routeParams, ColorService, PaletteService, ColorApiService) {
+
 
 	const getThePalettes = () => {
 		PaletteService.getPalettes($rootScope.uid).then((results) => {
@@ -31,36 +32,14 @@ app.controller("ViewCtrl", function($scope, $rootScope, ColorService, PaletteSer
 	};
 
 
-
-	$scope.paletteObject = (newpalette, newcolor) => {
-		$scope.updatedPalette = {
-			"mode": newpalette.mode,
-			"name": newcolor.name,
-			"count": newpalette.count,
-			"isFavorite": newpalette.isFavorite,
-			"uid": $rootScope.uid
-		};
-	};
-
-	$scope.colorObject = (newcolor) => {
-		$scope.updatedColor = {
-			"paletteId": newcolor.paletteId,
-			"name": newcolor.name,
-			"hex": newcolor.hex,
-			"clean": newcolor.clean,
-			"image": newcolor.image,
-			"uid": $rootScope.uid
-		};
-	};
-
 $scope.apiPalettes = [];
 
 	$scope.eventApi = {
  		   onChange:  function(api, color, $event) {
     	ColorApiService.colorConfiguration(color).then((results) => {
     		$scope.apiPalettes = results.data;
-    		PaletteService.addNewPalette($scope.apiPalettes);
-    		console.log(results.data);
+    		let saved = PaletteService.createPaletteObject(results.data);
+    		console.log(saved);
     	}).catch((err) => {
     		console.log("error in eventApi", err);
     	});

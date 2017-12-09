@@ -41,12 +41,12 @@ const getFavoritePalettes = (userUid) => {
 		});
 	};
 
-	const createPaletteObject = (newpalette) => {
+	const createPaletteObject = (palette) => {
 			return {
-			"mode": newpalette.mode,
-			"count": newpalette.count,
-			"isFavorite": newpalette.isFavorite,
-			"uid": newpalette.uid
+			"mode": palette.mode,
+			"count": palette.count,
+			"isFavorite": palette.isFavorite,
+			"uid": palette.uid
 		};
 	};
 
