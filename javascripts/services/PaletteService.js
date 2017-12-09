@@ -45,10 +45,10 @@ const getFavoritePalettes = (userUid) => {
 			return {
 			"mode": palette.mode,
 			"count": palette.count,
-			"colors": palette.colors[0].hex,
-			"colorsone": palette.colors[1].hex, 
-			"colorstwo": palette.colors[2].hex,
-			"colorsthree": palette.colors[3].hex,
+			"colors": palette.colors[0].hex.value,
+			"colorsone": palette.colors[1].hex.value, 
+			"colorstwo": palette.colors[2].hex.value,
+			"colorsthree": palette.colors[3].hex.value,
 			"image": palette.image.bare,
 			"isFavorite": palette.isFavorite,
 			"uid": palette.uid
