@@ -6,10 +6,8 @@ app.service("PaletteService", function($http, $q, $rootScope, FIREBASE_CONFIG, C
 const getPalettes = (userUid) => {
 		let palettesArray = [];
 		return $q ((resolve, reject) => {
-
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/palettes.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
 				let fbPalettes = results.data;
-				console.log(fbPalettes);
 				Object.keys(fbPalettes).forEach((key) => {
 					fbPalettes[key].id = key;
 					palettesArray.push(fbPalettes[key]);

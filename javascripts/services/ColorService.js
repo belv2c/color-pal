@@ -7,7 +7,6 @@ const getColors = (userUid) => {
 		return $q ((resolve, reject) => {
 			$http.get(`${FIREBASE_CONFIG.databaseURL}/colors.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
 				let fbColors = results.data;
-				console.log(fbColors);
 				Object.keys(fbColors).forEach((key) => {
 					fbColors[key].id = key;
 					colorsArray.push(fbColors[key]);

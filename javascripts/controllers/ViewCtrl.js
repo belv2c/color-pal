@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("ViewCtrl", function($scope, $rootScope, ColorService, PaletteService) {
+app.controller("ViewCtrl", function($scope, $rootScope, ColorService, PaletteService, ColorApiService) {
 
 	const getThePalettes = () => {
 		PaletteService.getPalettes($rootScope.uid).then((results) => {
@@ -12,6 +12,7 @@ app.controller("ViewCtrl", function($scope, $rootScope, ColorService, PaletteSer
 	};
 	getThePalettes();
 
+
 	const getTheColors = () => {
 		ColorService.getColors($rootScope.uid).then((results) => {
 			$scope.colors = results;
@@ -22,8 +23,9 @@ app.controller("ViewCtrl", function($scope, $rootScope, ColorService, PaletteSer
 	getTheColors();
 
 
+
 	$scope.paletteObject = (newpalette) => {
-		$rootScope.updatedPalette = {
+		$scope.updatedPalette = {
 			"mode": newpalette.mode,
 			"count": newpalette.count,
 			"isFavorite": newpalette.isFavorite,
@@ -32,20 +34,26 @@ app.controller("ViewCtrl", function($scope, $rootScope, ColorService, PaletteSer
 	};
 
 	$scope.colorObject = (newcolor) => {
-		$rootScope.updatedColor = {
+		$scope.updatedColor = {
 			"paletteId": newcolor.paletteId,
 			"name": newcolor.name,
 			"hex": newcolor.hex,
-			"clean": $rootScope.clean,
-			"image": $rootScope.image,
+			"clean": newcolor.clean,
+			"image": newcolor.image,
 			"uid": $rootScope.uid
 		};
 	};
 
 
+	$scope.eventApi = {
+ 		   onChange:  function(api, color, $event) {
+    	ColorApiService.colorConfiguration(color);
+   	 }
+   };
+
     
 	// COLOR PICKER
-    $scope.color = '#FF0000';
+
 	$scope.options = {
 	    // html attributes
 	    format: 'hex',
