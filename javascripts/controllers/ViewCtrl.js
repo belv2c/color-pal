@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("ViewCtrl", function($scope, $rootScope, PaletteService) {
+app.controller("ViewCtrl", function($scope, $rootScope, ColorService, PaletteService, ColorApiService) {
 
 	const getThePalettes = () => {
 		PaletteService.getPalettes($rootScope.uid).then((results) => {
@@ -11,9 +11,49 @@ app.controller("ViewCtrl", function($scope, $rootScope, PaletteService) {
 		});
 	};
 	getThePalettes();
+
+
+	const getTheColors = () => {
+		ColorService.getColors($rootScope.uid).then((results) => {
+			$scope.colors = results;
+		}).catch((err) => {
+			console.log("error in getTheColors", err);
+		});
+	};
+	getTheColors();
+
+
+
+	$scope.paletteObject = (newpalette) => {
+		$scope.updatedPalette = {
+			"mode": newpalette.mode,
+			"count": newpalette.count,
+			"isFavorite": newpalette.isFavorite,
+			"uid": $rootScope.uid
+		};
+	};
+
+	$scope.colorObject = (newcolor) => {
+		$scope.updatedColor = {
+			"paletteId": newcolor.paletteId,
+			"name": newcolor.name,
+			"hex": newcolor.hex,
+			"clean": newcolor.clean,
+			"image": newcolor.image,
+			"uid": $rootScope.uid
+		};
+	};
+
+
+	$scope.eventApi = {
+ 		   onChange:  function(api, color, $event) {
+    	ColorApiService.colorConfiguration(color);
+   	 }
+   };
+
     
 	// COLOR PICKER
-    $scope.color = '#FF0000';
+
 	$scope.options = {
 	    // html attributes
 	    format: 'hex',

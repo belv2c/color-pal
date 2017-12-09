@@ -3,5 +3,24 @@
 <color-picker 
 	ng-model="myColor"
 	options="options"
+	api="api"
+    event-api="eventApi"
 ></color-picker>
 
+	<div id="palettes" class="container">
+
+		<div ng-repeat="newPalette in palettes" class="col-md-4">
+			<button><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+			<div class="thumbnail palette">
+				<h4>{{newPalette.mode}}</h4>
+			</div>
+		</div>
+	  </div>
+
+<div id="colors" class="container">
+		<div ng-repeat="newColor in colors" ng-if="newColor.palette.id === palette.id" class="col-md-4">
+			<div class="thumbnail color">
+				<h4>{{newColor.name}}</h4>
+			</div>
+
+	</div>
