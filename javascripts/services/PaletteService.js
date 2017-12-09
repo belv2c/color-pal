@@ -41,6 +41,15 @@ const getFavoritePalettes = (userUid) => {
 		});
 	};
 
+	const createPaletteObject = (newpalette) => {
+			return {
+			"mode": newpalette.mode,
+			"count": newpalette.count,
+			"isFavorite": newpalette.isFavorite,
+			"uid": newpalette.uid
+		};
+	};
+
 
 
 const addNewPalette = (newPalette) => {
@@ -56,6 +65,6 @@ const updatePalette = (updatedPalette, paletteId) => {
 	};
 
 
-return {getPalettes, getFavoritePalettes, addNewPalette, deletePalette, updatePalette};
+return {getPalettes, getFavoritePalettes, addNewPalette, deletePalette, updatePalette, createPaletteObject};
 });
 

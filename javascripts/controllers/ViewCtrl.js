@@ -59,11 +59,14 @@ $scope.apiPalettes = [];
  		   onChange:  function(api, color, $event) {
     	ColorApiService.colorConfiguration(color).then((results) => {
     		$scope.apiPalettes = results.data;
+    		PaletteService.addNewPalette($scope.apiPalettes);
+    		console.log(results.data);
     	}).catch((err) => {
     		console.log("error in eventApi", err);
     	});
    	 }
    };
+
 
     
 	// COLOR PICKER
