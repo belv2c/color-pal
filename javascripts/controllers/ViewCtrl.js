@@ -5,7 +5,6 @@ app.controller("ViewCtrl", function($scope, $rootScope, ColorService, PaletteSer
 	const getThePalettes = () => {
 		PaletteService.getPalettes($rootScope.uid).then((results) => {
 			$scope.palettes = results;
-
 		}).catch((err) => {
 			console.log("error in getThePalettes", err);
 		});
@@ -23,10 +22,20 @@ app.controller("ViewCtrl", function($scope, $rootScope, ColorService, PaletteSer
 	getTheColors();
 
 
+	$scope.deletePalette = (paletteId) => {
+		PaletteService.deletePalette(paletteId).then((results) => {
+			getThePalettes();
+		}).catch((err) => {
+			console.log("error in deletePalette", err);
+		});
+	};
 
-	$scope.paletteObject = (newpalette) => {
+
+
+	$scope.paletteObject = (newpalette, newcolor) => {
 		$scope.updatedPalette = {
 			"mode": newpalette.mode,
+			"name": newcolor.name,
 			"count": newpalette.count,
 			"isFavorite": newpalette.isFavorite,
 			"uid": $rootScope.uid

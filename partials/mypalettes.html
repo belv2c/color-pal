@@ -1,3 +1,16 @@
 <div class="text-center" ng-controller="MyPalettesCtrl">
 
+<div ng-repeat="newPalette in palettes" class="col-md-4">
+    <div class="caption">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+            </div>
+            <div class="panel-body">
+                <ul>
+                    <li ng-repeat="newColor in colors" ng-if="palette.id === color.id">{{newPalette.mode}} {{newColor.name}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
