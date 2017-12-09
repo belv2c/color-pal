@@ -41,12 +41,17 @@ const getFavoritePalettes = (userUid) => {
 		});
 	};
 
-	const createPaletteObject = (newpalette) => {
+	const createPaletteObject = (palette) => {
 			return {
-			"mode": newpalette.mode,
-			"count": newpalette.count,
-			"isFavorite": newpalette.isFavorite,
-			"uid": newpalette.uid
+			"mode": palette.mode,
+			"count": palette.count,
+			"colors": palette.colors[0].hex,
+			"colorsone": palette.colors[1].hex, 
+			"colorstwo": palette.colors[2].hex,
+			"colorsthree": palette.colors[3].hex,
+			"image": palette.image.bare,
+			"isFavorite": palette.isFavorite,
+			"uid": palette.uid
 		};
 	};
 
