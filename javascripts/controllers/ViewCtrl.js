@@ -59,7 +59,6 @@ $scope.apiPalettes = [];
  		   onChange:  function(api, color, $event) {
     	ColorApiService.colorConfiguration(color).then((results) => {
     		$scope.apiPalettes = results.data;
-    		console.log("palettes?", results.data);
     	}).catch((err) => {
     		console.log("error in eventApi", err);
     	});
