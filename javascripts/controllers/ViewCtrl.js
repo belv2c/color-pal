@@ -36,13 +36,13 @@ $scope.apiPalettes = [];
 
 	$scope.eventApi = {
  		   onChange:  function(api, color, palettes, $event) {
- 		   	
     	ColorApiService.colorConfiguration(color).then((results) => {
-
     		$scope.apiPalettes = results.data;
-    		palettes.isFavorite = false;
+    		results.data.isFavorite = true;
+    		results.data.uid = $rootScope.uid;
     		let apiPaletteObject = PaletteService.createPaletteObject(results.data);
-    		console.log(apiPaletteObject);
+    		PaletteService.addNewPalette(apiPaletteObject);
+    		getThePalettes();
     	}).catch((err) => {
     		console.log("error in eventApi", err);
     	});

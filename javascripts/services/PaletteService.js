@@ -49,8 +49,6 @@ const getFavoritePalettes = (userUid) => {
 			"colorsone": palette.colors[1].hex, 
 			"colorstwo": palette.colors[2].hex,
 			"colorsthree": palette.colors[3].hex,
-			"colorsfour": palette.colors[4].hex,
-			"colorsfive": palette.colors[5].hex,
 			"image": palette.image.bare,
 			"isFavorite": palette.isFavorite,
 			"uid": palette.uid
