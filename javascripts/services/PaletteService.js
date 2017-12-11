@@ -41,7 +41,7 @@ const getFavoritePalettes = (userUid) => {
 		});
 	};
 
-	const createPaletteObject = (palette) => {
+	const createPaletteObjectFromApi = (palette) => {
 			return {
 			"mode": palette.mode,
 			"count": palette.count,
@@ -55,6 +55,20 @@ const getFavoritePalettes = (userUid) => {
 		};
 	};
 
+	const createPrettyPaletteObject = (palette) => {
+		console.log(palette);
+			return {
+			"mode": palette.mode,
+			"count": palette.count,
+			"colors": palette.colors,
+			"colorsone": palette.colorsone, 
+			"colorstwo": palette.colorstwo,
+			"colorsthree": palette.colorsthree,
+			"image": palette.image,
+			"isFavorite": palette.isFavorite,
+			"uid": palette.uid
+		};
+	};
 
 
 const addNewPalette = (newPalette) => {
@@ -65,11 +79,11 @@ const deletePalette = (paletteId) => {
 		return $http.delete(`${FIREBASE_CONFIG.databaseURL}/palettes/${paletteId}.json`);
 	};
 
-const updatePalette = (updatedPalette, paletteId) => {
+const updatePalette = (paletteId, updatedPalette) => {
 		return $http.put(`${FIREBASE_CONFIG.databaseURL}/palettes/${paletteId}.json`, JSON.stringify(updatedPalette));
 	};
 
 
-return {getPalettes, getFavoritePalettes, addNewPalette, deletePalette, updatePalette, createPaletteObject};
+return {getPalettes, getFavoritePalettes, addNewPalette, deletePalette, updatePalette, createPaletteObjectFromApi, createPrettyPaletteObject};
 });
 

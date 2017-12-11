@@ -8,15 +8,19 @@
 ></color-picker>
 
 
-<div ng-repeat="palette in palettes" class="col-xs-8 col-xs-offset-2">
-<button><i class="fa fa-bookmark-o" aria-hidden="true"></i></button>
+<div ng-repeat="palette in palettes | orderBy: '$index':true" class="col-xs-8 col-xs-offset-2">
+
+<button><i class="fa fa-bookmark-o" aria-hidden="true" ng-click="favoritePalettes(palette)"></i></button>
+
+
 <button><i class="fa fa-trash-o" ng-click="deletePalette(palette.id)" aria-hidden="true"></i> </button>
+
     <div class="caption">
         <div class="palette-title">
             <div>
                 <h1>{{palette.mode}}</h1>
             </div>
-            <div class="palette-color-container col-xs-8">
+            <div class="palette-color-container col-xs-8 col-xs-offset-2">
              <div class="color-div col-md-2 col-md-offset-1" style="background-color:{{palette.colors}}">{{palette.colors}}</div>
              <div class="color-div col-md-2 col-md-offset-1" style="background-color:{{palette.colorsone}}">{{palette.colorsone}}</div>
              <div class="color-div col-md-2 col-md-offset-1" style="background-color:{{palette.colorstwo}}">{{palette.colorstwo}}</div>

@@ -1,5 +1,5 @@
 body {
-  background-color: lightgreen; }
+  background-color: white; }
 
 .googleButton {
   border-radius: 87px;
@@ -9,4 +9,5 @@ body {
 .color-div {
   border: .5px solid black;
   height: 56px;
-  width: 84px; }
+  width: 84px;
+  color: white; }
