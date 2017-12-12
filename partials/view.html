@@ -8,7 +8,7 @@
 ></color-picker>
 
 
-<div ng-repeat="palette in palettes.slice().reverse()" class="col-xs-8 col-xs-offset-2">
+<div ng-repeat="palette in palettes" class="col-xs-8 col-xs-offset-2">
 
 <button class="btn btn-default" ng-click="favoritePalettes(palette)" ng-if="palette.isFavorite"><i class="fa fa-star" aria-hidden="true"></i></button>
 
@@ -24,13 +24,7 @@
             
             <div class="panel-body">
                 <ul>
-                    <li ng-repeat="color in colors" ng-if="color.paletteId === palette.id">{{color.name}}</li>
-                    <div class="palette-color-container col-xs-8 col-xs-offset-2">
-                 <div class="color-div col-md-2 col-md-offset-1" style="background-color:{{palette.colors}}">{{palette.colors}}</div>
-                 <div class="color-div col-md-2 col-md-offset-1" style="background-color:{{palette.colorsone}}">{{palette.colorsone}}</div>
-                 <div class="color-div col-md-2 col-md-offset-1" style="background-color:{{palette.colorstwo}}">{{palette.colorstwo}}</div>
-                 <div class="color-div col-md-2 col-md-offset-1" style="background-color:{{palette.colorsthree}}">{{palette.colorsthree}}</div>
-             </div>
+                    <div class="col-xs-3" style="background-color:{{ ::color.hex}}" ng-repeat="color in colors" ng-if="color.paletteId === palette.id" >{{ ::color.name}}{{ ::color.hex}}</div>
                 </ul>
             </div>
         </div>

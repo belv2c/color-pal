@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("ViewCtrl", function($location, $scope, $rootScope, ColorService, PaletteService, ColorApiService) {
+app.controller("ViewCtrl", function($location, $scope, $rootScope, $timeout, ColorService, PaletteService, ColorApiService) {
 
 $scope.apiPalettes = [];
 
@@ -34,30 +34,36 @@ $scope.apiPalettes = [];
 
 
 	$scope.eventApi = {
- 		   onChange:  function(api, color, palettes, $event) {
+ 		   onClose:  function(api, color, $event) {
     	ColorApiService.colorConfiguration(color).then((colorResults) => {
     		$scope.apiPalettes = colorResults.data;
     		colorResults.data.isFavorite = true;
     		colorResults.data.uid = $rootScope.uid;
+    		console.log(1);
 
     		let apiPaletteObject = PaletteService.createPaletteObjectFromApi(colorResults.data);
     		let colors = colorResults.data.colors;
     		
     		PaletteService.addNewPalette(apiPaletteObject).then((paletteResults) => {
     			let paletteId = paletteResults.data.name;
-   
+  				 console.log(2);
+
     			colors.forEach((color) => {
     				color.paletteId = paletteId;
     				color.uid = $rootScope.uid;
     				let apiColorObject = ColorService.createColorObjectFromApi(color);
     				ColorService.addNewColor(apiColorObject).then((noncolor) => {
+					console.log(3);
     				});
+    				
     			});
     		 });
-    		getThePalettes();
+    		console.log(4);
+    		
     	}).catch((err) => {
     		console.log("error in eventApi", err);
-    	});
+
+    	});$timeout(() => {getThePalettes();}, 1000); 
    	 }
    };
 
@@ -67,10 +73,10 @@ $scope.apiPalettes = [];
    	let updatedPalette = {};
 
    		if(!palette.isFavorite) {
-   			updatedPalette = PaletteService.createPrettyPaletteObject(palette);
+   			updatedPalette = PaletteService.createPaletteObjectFromApi(palette);
    			updatedPalette.isFavorite = true;
    		} else {
-   			updatedPalette = PaletteService.createPrettyPaletteObject(palette);
+   			updatedPalette = PaletteService.createPaletteObjectFromApi(palette);
    			updatedPalette.isFavorite = false;
    		}
    		console.log("paletteId", palette.id);
@@ -90,7 +96,14 @@ $scope.apiPalettes = [];
 	    // html attributes
 	    format: 'hex',
 	    placeholder: 'Pick a color',
-	    round: 'true'
+	    round: 'true',
+	    close: {
+	    	show: 'true',
+	    	label: 'Close',
+	    	class: 'closebtn'
+	    }
+
 	 };
+
 
 });

@@ -54,20 +54,7 @@ const getFavoritePalettes = (userUid) => {
 
 	
 
-	const createPrettyPaletteObject = (palette) => {
-		console.log(palette);
-			return {
-			"mode": palette.mode,
-			"count": palette.count,
-			"colors": palette.colors,
-			"colorsone": palette.colorsone, 
-			"colorstwo": palette.colorstwo,
-			"colorsthree": palette.colorsthree,
-			"image": palette.image,
-			"isFavorite": palette.isFavorite,
-			"uid": palette.uid
-		};
-	};
+
 
 
 const addNewPalette = (newPalette) => {
@@ -83,6 +70,6 @@ const updatePalette = (paletteId, updatedPalette) => {
 	};
 
 
-return {getPalettes, getFavoritePalettes, addNewPalette, deletePalette, updatePalette, createPaletteObjectFromApi, createPrettyPaletteObject};
+return {getPalettes, getFavoritePalettes, addNewPalette, deletePalette, updatePalette, createPaletteObjectFromApi};
 });
 
