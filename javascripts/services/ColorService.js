@@ -18,6 +18,17 @@ const getColors = (userUid) => {
 		});
 	};
 
+	const createColorObjectFromApi = (color) => {
+		return {
+			"paletteId": color.paletteId,
+			"name": color.name.value,
+			"hex": color.hex.value,
+			"clean": color.hex.clean,
+			"image": color.image.bare,
+			"uid": color.uid
+		};
+	};
+
 
 
 const addNewColor = (newColor) => {
@@ -26,5 +37,5 @@ const addNewColor = (newColor) => {
 
 
 
-return {getColors, addNewColor};
+return {getColors, addNewColor, createColorObjectFromApi};
 });

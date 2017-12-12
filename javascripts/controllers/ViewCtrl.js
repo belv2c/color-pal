@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("ViewCtrl", function($scope, $rootScope, $routeParams, ColorService, PaletteService, ColorApiService) {
+app.controller("ViewCtrl", function($location, $scope, $rootScope, ColorService, PaletteService, ColorApiService) {
 
 $scope.apiPalettes = [];
 
@@ -35,12 +35,25 @@ $scope.apiPalettes = [];
 
 	$scope.eventApi = {
  		   onChange:  function(api, color, palettes, $event) {
-    	ColorApiService.colorConfiguration(color).then((results) => {
-    		$scope.apiPalettes = results.data;
-    		results.data.isFavorite = true;
-    		results.data.uid = $rootScope.uid;
-    		let apiPaletteObject = PaletteService.createPaletteObjectFromApi(results.data);
-    		PaletteService.addNewPalette(apiPaletteObject);
+    	ColorApiService.colorConfiguration(color).then((colorResults) => {
+    		$scope.apiPalettes = colorResults.data;
+    		colorResults.data.isFavorite = true;
+    		colorResults.data.uid = $rootScope.uid;
+
+    		let apiPaletteObject = PaletteService.createPaletteObjectFromApi(colorResults.data);
+    		let colors = colorResults.data.colors;
+    		
+    		PaletteService.addNewPalette(apiPaletteObject).then((paletteResults) => {
+    			let paletteId = paletteResults.data.name;
+   
+    			colors.forEach((color) => {
+    				color.paletteId = paletteId;
+    				color.uid = $rootScope.uid;
+    				let apiColorObject = ColorService.createColorObjectFromApi(color);
+    				ColorService.addNewColor(apiColorObject).then((noncolor) => {
+    				});
+    			});
+    		 });
     		getThePalettes();
     	}).catch((err) => {
     		console.log("error in eventApi", err);
@@ -49,17 +62,19 @@ $scope.apiPalettes = [];
    };
 
 
-   $scope.favoritePalettes = (palette, paletteId) =>{ 
+
+   $scope.favoritePalettes = (palette) =>{ 
    	let updatedPalette = {};
 
-   		
    		if(!palette.isFavorite) {
    			updatedPalette = PaletteService.createPrettyPaletteObject(palette);
+   			updatedPalette.isFavorite = true;
    		} else {
    			updatedPalette = PaletteService.createPrettyPaletteObject(palette);
    			updatedPalette.isFavorite = false;
    		}
-   		PaletteService.updatePalette(paletteId, updatedPalette).then(() => {
+   		console.log("paletteId", palette.id);
+   		PaletteService.updatePalette(palette.id, updatedPalette).then(() => {
    			getThePalettes();
 
    		}).catch((err) => {
@@ -67,7 +82,6 @@ $scope.apiPalettes = [];
    		});
    	
    };
-
 
 
 	// COLOR PICKER
