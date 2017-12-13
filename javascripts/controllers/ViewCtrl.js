@@ -33,8 +33,10 @@ $scope.apiPalettes = [];
 	};
 
 
+// AFTER CLOSE BUTTON IS HIT, CALL THE API, COMBINE PALETTE AND COLOR DATA, THEN PRINT THEM TO THE PAGE
+
 	$scope.eventApi = {
- 		   onChange:  function(api, color, palettes, $event) {
+ 		   onClose:  function(api, color, $event) {
     	ColorApiService.colorConfiguration(color).then((colorResults) => {
     		$scope.apiPalettes = colorResults.data;
     		colorResults.data.isFavorite = true;
@@ -45,32 +47,39 @@ $scope.apiPalettes = [];
     		
     		PaletteService.addNewPalette(apiPaletteObject).then((paletteResults) => {
     			let paletteId = paletteResults.data.name;
-   
+  				 let counter = 1;
+  				 let finalCount = 4;
+
     			colors.forEach((color) => {
     				color.paletteId = paletteId;
     				color.uid = $rootScope.uid;
     				let apiColorObject = ColorService.createColorObjectFromApi(color);
+
     				ColorService.addNewColor(apiColorObject).then((noncolor) => {
+						counter ++;
+						if (counter === finalCount) {
+							getThePalettes();
+							getTheColors();
+						}
     				});
     			});
     		 });
-    		getThePalettes();
     	}).catch((err) => {
     		console.log("error in eventApi", err);
-    	});
-   	 }
-   };
+      });
+   	}
+  };
 
-
+// SAVE PALETTE TO MY PALETTES PAGE
 
    $scope.favoritePalettes = (palette) =>{ 
    	let updatedPalette = {};
 
    		if(!palette.isFavorite) {
-   			updatedPalette = PaletteService.createPrettyPaletteObject(palette);
+   			updatedPalette = PaletteService.createPaletteObjectFromApi(palette);
    			updatedPalette.isFavorite = true;
    		} else {
-   			updatedPalette = PaletteService.createPrettyPaletteObject(palette);
+   			updatedPalette = PaletteService.createPaletteObjectFromApi(palette);
    			updatedPalette.isFavorite = false;
    		}
    		console.log("paletteId", palette.id);
@@ -90,7 +99,13 @@ $scope.apiPalettes = [];
 	    // html attributes
 	    format: 'hex',
 	    placeholder: 'Pick a color',
-	    round: 'true'
+	    round: 'true',
+	    close: {
+	    	show: 'true',
+	    	label: 'Close',
+	    	class: 'closebtn'
+	    }
 	 };
+
 
 });
