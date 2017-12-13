@@ -33,11 +33,16 @@
 .generate-title {
   margin-bottom: 45px; }
 
-.color-div {
-  border: .5px solid black;
-  height: 84px;
-  width: 119px;
-  margin-right: 10px; }
+.panel-body {
+  -webkit-margin-after: 47px; }
+  .panel-body .color-div {
+    height: 84px;
+    width: 119px;
+    margin-right: 3px; }
+    .panel-body .color-div .details-div {
+      margin-top: 84px;
+      margin-left: -5px;
+      width: 100px; }
 
 body {
   background-color: white; }
