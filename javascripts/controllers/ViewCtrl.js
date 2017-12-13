@@ -113,6 +113,9 @@ $scope.apiPalettes = [];
 	    format: 'hex',
 	    placeholder: 'Pick a color',
 	    round: 'true',
+	    show: {
+	    	swatch: 'false',
+	    },
 	    close: {
 	    	show: 'true',
 	    	label: 'Close',

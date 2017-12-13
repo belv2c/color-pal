@@ -1,12 +1,16 @@
 <div class="text-center" ng-controller="ViewCtrl">
 
 <div class="color-picker-big-div">
-<color-picker 
+
+<h1 class="hard-title col-md-8 col-md-offset-2">Picking colors is hard</h1>
+<h3 class="generate-title col-md-8 col-md-offset-2">Choose a color to generate a palette</h3>
+
+<button class="color-button col-md-9 col-md-offset-5"><color-picker 
 	ng-model="myColor"
 	options="options"
 	api="api"
     event-api="eventApi"
-></color-picker>
+></color-picker></button>
 </div>
 
 <div ng-repeat="palette in palettes" class="col-xs-8 col-xs-offset-2">

@@ -1,10 +1,36 @@
-body {
-  background-color: white; }
+.edit-saved-title {
+  text-decoration: none;
+  color: lightgreen;
+  border-bottom: dashed 3px black;
+  font-size: 2em; }
 
 .googleButton {
   border-radius: 87px;
   background-color: transparent;
   border-style: none; }
+
+.color-button {
+  border-radius: 50px;
+  background: #00c9b7;
+  width: 180px;
+  height: 50px;
+  position: relative;
+  color: #fff;
+  font-size: 0.97em;
+  letter-spacing: 0.094em;
+  left: 22px; }
+
+.color-picker-input-swatch {
+  width: 114px;
+  border-style: none;
+  background-color: #00c9b7;
+  text-align: center; }
+
+.generate-title {
+  margin-bottom: 45px; }
+
+body {
+  background-color: white; }
 
 .color-div {
   border: .5px solid black;
@@ -13,4 +39,4 @@ body {
 
 .color-picker-big-div {
   height: 1000px;
-  width: 1000px; }
+  width: 100%; }
