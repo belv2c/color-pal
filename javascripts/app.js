@@ -2,4 +2,4 @@
 
 "use strict";
 
-const app = angular.module('ColorPalApp', ["color.picker", "ngAnimate", "ngRoute", "ngSanitize", "duScroll"]);
+const app = angular.module('ColorPalApp', ["color.picker", "ngAnimate", "ngRoute", "ngSanitize", "duScroll", "xeditable"]);

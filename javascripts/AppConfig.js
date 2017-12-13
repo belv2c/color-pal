@@ -13,9 +13,9 @@ let isAuth = (AuthService) => new Promise ((resolve, reject) => {
 app.value('duScrollDuration', 2000);
 
 //runs one time per application after the app config
-app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService, ColorApiService){
+app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService, ColorApiService, editableOptions){
 	firebase.initializeApp(FIREBASE_CONFIG);
-
+	editableOptions.theme = 'bs3';
 
 $rootScope.$on('$routeChangeStart', function(event, currRoute, prevRoute) {
 	var logged = AuthService.isAuthenticated();
