@@ -33,14 +33,15 @@
 .generate-title {
   margin-bottom: 45px; }
 
-body {
-  background-color: white; }
-
 .color-div {
   border: .5px solid black;
   height: 84px;
-  width: 119px; }
+  width: 119px;
+  margin-right: 10px; }
+
+body {
+  background-color: white; }
 
 .color-picker-big-div {
-  height: 1000px;
+  height: 800px;
   width: 100%; }
