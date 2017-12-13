@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("MyPalettesCtrl", function($location, $rootScope, $scope, PaletteService) {
+app.controller("MyPalettesCtrl", function($rootScope, $scope, PaletteService) {
 	
 
 	const getFavoriteFbPalettes = () => {
@@ -9,11 +9,8 @@ app.controller("MyPalettesCtrl", function($location, $rootScope, $scope, Palette
 		}).catch((err) => {
 			console.log("error in getContacts", err);
 		});
-		
 	};
 
 getFavoriteFbPalettes();
-
-
 
 });

@@ -82,13 +82,11 @@ $scope.apiPalettes = [];
    			updatedPalette = PaletteService.createPaletteObjectFromApi(palette);
    			updatedPalette.isFavorite = false;
    		}
-   		console.log("paletteId", palette.id);
    		PaletteService.updatePalette(palette.id, updatedPalette).then(() => {
    			getThePalettes();
-
    		}).catch((err) => {
    			console.log("error in favoritePalettes", err);
-   		});
+   	  });
    	
    };
 
