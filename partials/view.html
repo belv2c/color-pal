@@ -1,12 +1,13 @@
 <div class="text-center" ng-controller="ViewCtrl">
 
+<div class="color-picker-big-div">
 <color-picker 
 	ng-model="myColor"
 	options="options"
 	api="api"
     event-api="eventApi"
 ></color-picker>
-
+</div>
 
 <div ng-repeat="palette in palettes" class="col-xs-8 col-xs-offset-2">
 
@@ -24,7 +25,7 @@
             
             <div class="panel-body">
                 <ul>
-                    <div class="col-xs-3" style="background-color:{{ ::color.hex}}" ng-repeat="color in colors" ng-if="color.paletteId === palette.id" >{{ ::color.name}}{{ ::color.hex}}</div>
+                    <div class="col-xs-3" id="colorDiv" style="background-color:{{ ::color.hex}}" ng-repeat="color in colors" ng-if="color.paletteId === palette.id" >{{ ::color.name}}{{ ::color.hex}}</div>
                 </ul>
             </div>
         </div>

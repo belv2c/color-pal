@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("ViewCtrl", function($location, $scope, $rootScope, ColorService, PaletteService, ColorApiService) {
+app.controller("ViewCtrl", function($document, $location, $scope, $rootScope, ColorService, PaletteService, ColorApiService) {
 
 $scope.apiPalettes = [];
 
@@ -60,6 +60,8 @@ $scope.apiPalettes = [];
 						if (counter === finalCount) {
 							getThePalettes();
 							getTheColors();
+							var someElement = angular.element(document.getElementById('colorDiv'));
+    						$document.scrollToElementAnimated(someElement);
 						}
     				});
     			});
@@ -89,6 +91,8 @@ $scope.apiPalettes = [];
    	  });
    	
    };
+
+
 
 
 	// COLOR PICKER
