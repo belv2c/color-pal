@@ -27,6 +27,7 @@ $scope.apiPalettes = [];
 	$scope.deletePalette = (paletteId) => {
 		PaletteService.deletePalette(paletteId).then((results) => {
 			getThePalettes();
+			getTheColors();
 		}).catch((err) => {
 			console.log("error in deletePalette", err);
 		});
