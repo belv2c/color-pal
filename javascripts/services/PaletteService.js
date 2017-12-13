@@ -67,6 +67,7 @@ const updatePalette = (paletteId, updatedPalette) => {
 	};
 
 
+
 return {getPalettes, getFavoritePalettes, addNewPalette, deletePalette, updatePalette, createPaletteObjectFromApi};
 });
 

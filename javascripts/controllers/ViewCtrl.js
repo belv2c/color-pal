@@ -93,7 +93,21 @@ $scope.apiPalettes = [];
    	
    };
 
+$scope.updatePaletteAfterFormEdit = (palette) => {
+	let updatedPalette = {};
 
+	if(palette.mode) {
+		updatedPalette = PaletteService.createPaletteObjectFromApi(palette);
+	}
+
+	PaletteService.updatePalette(palette.id, updatedPalette).then(() => {
+		console.log(palette.mode);
+		
+		getThePalettes();
+	}).catch((err) => {
+		console.log("err");
+	});
+};
 
 
 	// COLOR PICKER
