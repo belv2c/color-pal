@@ -26,6 +26,10 @@
   background-color: #00c9b7;
   text-align: center; }
 
+.navbar {
+  background-color: white;
+  border-bottom: white; }
+
 .generate-title {
   margin-bottom: 45px; }
 
