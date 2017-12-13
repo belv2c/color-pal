@@ -54,9 +54,6 @@ const getFavoritePalettes = (userUid) => {
 
 	
 
-
-
-
 const addNewPalette = (newPalette) => {
 		return $http.post(`${FIREBASE_CONFIG.databaseURL}/palettes.json`, JSON.stringify(newPalette));
 	};
