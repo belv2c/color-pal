@@ -1,23 +1,15 @@
 @import 'colors';
 @import 'fonts';
+@import 'buttons';
+@import 'text';
+@import 'palettes';
 
 body {
 	background-color: white;
 }
 
-.googleButton {
-	border-radius: 87px;
-    background-color: transparent;
-    border-style: none;
-}
-
-.color-div {
-	border: .5px solid black;
-    height: 84px;
-    width: 119px;
-}
 
 .color-picker-big-div {
-	height: 1000px;
-	width: 1000px;
+	height: 800px;
+	width: 100%;
 }
