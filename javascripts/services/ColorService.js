@@ -32,7 +32,7 @@ const getColors = (userUid) => {
 
 
 const addNewColor = (newColor) => {
-	return $http.post(`${FIREBASE_CONFIG.databaseURL}/colors.json`, JSON.stringify(newColor));
+	return $http.post(`${FIREBASE_CONFIG.databaseURL}/colors.json`, JSON.stringify(newColor));	
 };
 
 

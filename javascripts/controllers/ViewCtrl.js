@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("ViewCtrl", function($location, $scope, $rootScope, $timeout, ColorService, PaletteService, ColorApiService) {
+app.controller("ViewCtrl", function($location, $scope, $rootScope, ColorService, PaletteService, ColorApiService) {
 
 $scope.apiPalettes = [];
 
@@ -33,41 +33,44 @@ $scope.apiPalettes = [];
 	};
 
 
+// AFTER CLOSE BUTTON IS HIT, CALL THE API, COMBINE PALETTE AND COLOR DATA, THEN PRINT THEM TO THE PAGE
+
 	$scope.eventApi = {
  		   onClose:  function(api, color, $event) {
     	ColorApiService.colorConfiguration(color).then((colorResults) => {
     		$scope.apiPalettes = colorResults.data;
     		colorResults.data.isFavorite = true;
     		colorResults.data.uid = $rootScope.uid;
-    		console.log(1);
 
     		let apiPaletteObject = PaletteService.createPaletteObjectFromApi(colorResults.data);
     		let colors = colorResults.data.colors;
     		
     		PaletteService.addNewPalette(apiPaletteObject).then((paletteResults) => {
     			let paletteId = paletteResults.data.name;
-  				 console.log(2);
+  				 let counter = 1;
+  				 let finalCount = 4;
 
     			colors.forEach((color) => {
     				color.paletteId = paletteId;
     				color.uid = $rootScope.uid;
     				let apiColorObject = ColorService.createColorObjectFromApi(color);
+
     				ColorService.addNewColor(apiColorObject).then((noncolor) => {
-					console.log(3);
+						counter ++;
+						if (counter === finalCount) {
+							getThePalettes();
+							getTheColors();
+						}
     				});
-    				
     			});
     		 });
-    		console.log(4);
-    		
     	}).catch((err) => {
     		console.log("error in eventApi", err);
+      });
+   	}
+  };
 
-    	});$timeout(() => {getThePalettes();}, 1000); 
-   	 }
-   };
-
-
+// SAVE PALETTE TO MY PALETTES PAGE
 
    $scope.favoritePalettes = (palette) =>{ 
    	let updatedPalette = {};
@@ -102,7 +105,6 @@ $scope.apiPalettes = [];
 	    	label: 'Close',
 	    	class: 'closebtn'
 	    }
-
 	 };
 
 
