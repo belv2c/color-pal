@@ -53,7 +53,8 @@ $scope.apiPalettes = [];
 
     		let apiPaletteObject = PaletteService.createPaletteObjectFromApi(colorResults.data);
     		let colors = colorResults.data.colors;
-    		
+    		colors.creationDate = new Date();
+
     		PaletteService.addNewPalette(apiPaletteObject).then((paletteResults) => {
     			let paletteId = paletteResults.data.name;
   				 let counter = 1;

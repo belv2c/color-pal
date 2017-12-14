@@ -48,7 +48,8 @@ const getFavoritePalettes = (userUid) => {
 			"count": palette.count,
 			"isFavorite": palette.isFavorite,
 			"mode": palette.mode,
-			"uid": palette.uid
+			"uid": palette.uid,
+			"creationDate": palette.creationDate
 		};
 	};
 
