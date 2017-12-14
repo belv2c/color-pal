@@ -11,6 +11,7 @@ let isAuth = (AuthService) => new Promise ((resolve, reject) => {
 });
 
 app.value('duScrollDuration', 2000);
+app.value('duScrollOffset', 100);
 
 //runs one time per application after the app config
 app.run(function($location, $rootScope, FIREBASE_CONFIG, AuthService, ColorApiService, editableOptions){
