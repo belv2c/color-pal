@@ -5,6 +5,7 @@
 				"mode": "monochrome",
 				"count": "2",
 				"isFavorite": "true",
+				"creationDate": "2017-12-14T22:41:01.672Z",
 				"uid": "uBVpEzpTYTQ3oriwBLgdma5cTZn1"
 
 		},
@@ -12,6 +13,7 @@
 				"mode": "monochrome dark",
 				"count": "2",
 				"isFavorite": "false",
+				"creationDate": "2017-12-14T22:40:01.672Z",
 				"uid": "uBVpEzpTYTQ3oriwBLgdma5cTZn1"
 
 		},
@@ -19,6 +21,7 @@
 				"mode": "analogic complement",
 				"count": "3",
 				"isFavorite": "true",
+				"creationDate": "2017-12-14T22:39:01.672Z",
 				"uid": "uBVpEzpTYTQ3oriwBLgdma5cTZn1"
 
 		}
