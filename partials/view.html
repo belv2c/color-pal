@@ -1,22 +1,26 @@
 <div class="text-center" ng-controller="ViewCtrl">
 
 <div class="color-picker-big-div">
+    <div class="initial-display">
+      <h1 class="hard-title col-md-8 col-md-offset-2">Picking colors is hard</h1>
+      <h3 class="generate-title col-md-8 col-md-offset-2">Choose a color to generate a palette</h3>
 
-<h1 class="hard-title col-md-8 col-md-offset-2">Picking colors is hard</h1>
-<h3 class="generate-title col-md-8 col-md-offset-2">Choose a color to generate a palette</h3>
+        <button class="color-button col-md-9 col-md-offset-5"><color-picker 
+        	ng-model="myColor"
+        	options="options"
+        	api="api"
+            event-api="eventApi"
+        ></color-picker></button>
 
-<button class="color-button col-md-9 col-md-offset-5"><color-picker 
-	ng-model="myColor"
-	options="options"
-	api="api"
-    event-api="eventApi"
-></color-picker></button>
-
-
+    </div>
 </div>
 
 <div ng-repeat="palette in palettes">
-
+<div class="caption">
+        <div class="palette-title">
+            <div>
+                <h1>{{palette.mode}}</h1>
+            </div>
 <button class="btn btn-default" ng-click="favoritePalettes(palette)" ng-if="palette.isFavorite"><i class="fa fa-star" aria-hidden="true"></i></button>
 
 <button class="btn btn-default" ng-click="favoritePalettes(palette)" ng-if="!palette.isFavorite"><i class="fa fa-star-o" aria-hidden="true"></i></button>
@@ -24,15 +28,12 @@
 <button class="btn btn-default" ng-click="deletePalette(palette.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
 
 
-    <div class="caption">
-        <div class="palette-title">
-            <div>
-                <h1>{{palette.mode}}</h1>
-            </div>
+    
             
             <div class="panel-body col-md-12 col-md-offset-3">
                 <ul>
-                    <div class="color-div col-xs-3" id="colorDiv" style="background-color:{{ ::color.hex}}" ng-repeat="color in colors" ng-if="color.paletteId === palette.id" ><div class="details-div">{{ ::color.name}}<br>{{ ::color.hex}}</div></div>
+                    <div class="color-div col-xs-3" style="background-color:{{ ::color.hex}}" ng-repeat="color in colors" ng-if="color.paletteId === palette.id"><div class="details-div">{{ ::color.hex}}</div>
+                </ul>
                 </ul>
             </div>
         </div>

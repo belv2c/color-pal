@@ -4,6 +4,12 @@
   border-bottom: dashed 3px black;
   font-size: 2em; }
 
+.delete-saved {
+  background-color: transparent;
+  color: white;
+  border-style: none;
+  margin-right: -99px; }
+
 .googleButton {
   border-radius: 87px;
   background-color: transparent;
@@ -18,7 +24,8 @@
   color: #fff;
   font-size: 0.97em;
   letter-spacing: 0.094em;
-  left: 22px; }
+  left: 22px;
+  margin-top: 23px; }
 
 .color-picker-input-swatch {
   width: 114px;
@@ -29,20 +36,54 @@
 .navbar {
   background-color: white;
   border-bottom: white; }
+  .navbar .navbar-brand {
+    font-family: futura-pt, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.3em;
+    margin-top: 3px;
+    color: black;
+    animation: colorChange 5s infinite; }
 
-.generate-title {
-  margin-bottom: 45px; }
+@keyframes colorChange {
+  0% {
+    color: #a32929; }
+  25% {
+    color: #66a329; }
+  50% {
+    color: #29a3a3; }
+  75% {
+    color: #6629a3; }
+  100% {
+    color: #a32929; } }
+
+.hard-title {
+  font-family: proxima-nova, sans-serif;
+  font-style: normal;
+  font-weight: 600; }
+  .hard-title .generate-title {
+    margin-bottom: 45px;
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-weight: 600; }
 
 .panel-body {
   -webkit-margin-after: 47px; }
   .panel-body .color-div {
-    height: 84px;
-    width: 119px;
+    height: 119px;
+    width: 138px;
     margin-right: 3px; }
     .panel-body .color-div .details-div {
-      margin-top: 84px;
-      margin-left: -5px;
-      width: 100px; }
+      margin-top: 124px;
+      margin-left: 0px;
+      width: 100px;
+      font-size: 1.2em; }
+
+.saved-details-div {
+  margin-top: 93px;
+  margin-left: 0px;
+  width: 100px;
+  font-size: 1.2em; }
 
 body {
   background-color: white; }
@@ -50,3 +91,5 @@ body {
 .color-picker-big-div {
   height: 800px;
   width: 100%; }
+  .color-picker-big-div .initial-display {
+    margin-top: 64px; }
