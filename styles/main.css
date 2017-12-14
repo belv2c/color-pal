@@ -4,6 +4,12 @@
   border-bottom: dashed 3px black;
   font-size: 2em; }
 
+.delete-saved {
+  background-color: transparent;
+  color: white;
+  border-style: none;
+  margin-right: -99px; }
+
 .googleButton {
   border-radius: 87px;
   background-color: transparent;
@@ -44,6 +50,12 @@
       margin-left: 0px;
       width: 100px;
       font-size: 1.2em; }
+
+.saved-details-div {
+  margin-top: 93px;
+  margin-left: 0px;
+  width: 100px;
+  font-size: 1.2em; }
 
 body {
   background-color: white; }
