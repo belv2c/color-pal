@@ -36,13 +36,14 @@
 .panel-body {
   -webkit-margin-after: 47px; }
   .panel-body .color-div {
-    height: 84px;
-    width: 119px;
+    height: 119px;
+    width: 138px;
     margin-right: 3px; }
     .panel-body .color-div .details-div {
-      margin-top: 84px;
-      margin-left: -5px;
-      width: 100px; }
+      margin-top: 124px;
+      margin-left: 0px;
+      width: 100px;
+      font-size: 1.2em; }
 
 body {
   background-color: white; }
@@ -50,3 +51,5 @@ body {
 .color-picker-big-div {
   height: 800px;
   width: 100%; }
+  .color-picker-big-div .initial-display {
+    margin-top: 64px; }

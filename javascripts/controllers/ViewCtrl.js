@@ -33,6 +33,15 @@ $scope.apiPalettes = [];
 		});
 	};
 
+	$scope.deleteColor = (colorId) => {
+			ColorService.deleteColor(colorId).then((results) => {
+				console.log(colorId);
+				getThePalettes();
+				getTheColors();
+			}).catch((err) => {
+				console.log("error in deletePalette", err);
+			});
+		};
 
 // AFTER CLOSE BUTTON IS HIT, CALL THE API, COMBINE PALETTE AND COLOR DATA, THEN PRINT THEM TO THE PAGE
 

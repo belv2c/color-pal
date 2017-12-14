@@ -35,7 +35,11 @@ const addNewColor = (newColor) => {
 	return $http.post(`${FIREBASE_CONFIG.databaseURL}/colors.json`, JSON.stringify(newColor));	
 };
 
+const deleteColor = (colorId) => {
+		return $http.delete(`${FIREBASE_CONFIG.databaseURL}/colors/${colorId}.json`);
+	};
 
 
-return {getColors, addNewColor, createColorObjectFromApi};
+
+return {getColors, addNewColor, deleteColor, createColorObjectFromApi};
 });
