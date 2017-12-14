@@ -40,4 +40,22 @@
 .navbar {
 	background-color: white;
 	border-bottom: white;
+
+    .navbar-brand {
+        font-family: futura-pt, sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 2.3em;
+        margin-top: 3px;
+        color: black;
+        animation: colorChange 5s infinite;
+    }
+}
+
+@keyframes colorChange {
+  0% { color: hsl(0, 60%, 40%); }
+  25% { color: hsl(90, 60%, 40%); }
+  50% { color: hsl(180, 60%, 40%); }
+  75% { color: hsl(270, 60%, 40%); }
+  100% { color: hsl(360, 60%, 40%); }
 }
