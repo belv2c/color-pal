@@ -1,6 +1,12 @@
-.generate-title {
-	margin-bottom: 45px;
-	font-family: futura-pt, sans-serif;
-font-style: normal;
-font-weight: 700;
+.hard-title {
+	font-family: proxima-nova, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+
+	.generate-title {
+		margin-bottom: 45px;
+		font-family: proxima-nova, sans-serif;
+		font-style: normal;
+		font-weight: 600;
+	}
 }

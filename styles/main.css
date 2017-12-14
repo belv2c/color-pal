@@ -24,7 +24,8 @@
   color: #fff;
   font-size: 0.97em;
   letter-spacing: 0.094em;
-  left: 22px; }
+  left: 22px;
+  margin-top: 23px; }
 
 .color-picker-input-swatch {
   width: 114px;
@@ -56,11 +57,15 @@
   100% {
     color: #a32929; } }
 
-.generate-title {
-  margin-bottom: 45px;
-  font-family: futura-pt, sans-serif;
+.hard-title {
+  font-family: proxima-nova, sans-serif;
   font-style: normal;
-  font-weight: 700; }
+  font-weight: 600; }
+  .hard-title .generate-title {
+    margin-bottom: 45px;
+    font-family: proxima-nova, sans-serif;
+    font-style: normal;
+    font-weight: 600; }
 
 .panel-body {
   -webkit-margin-after: 47px; }
