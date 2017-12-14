@@ -35,7 +35,6 @@ $scope.apiPalettes = [];
 
 	$scope.deleteColor = (colorId) => {
 			ColorService.deleteColor(colorId).then((results) => {
-				console.log(colorId);
 				getThePalettes();
 				getTheColors();
 			}).catch((err) => {
