@@ -67,6 +67,9 @@
     font-style: normal;
     font-weight: 600; }
 
+.info-div {
+  width: 50%; }
+
 .panel-body {
   -webkit-margin-after: 47px; }
   .panel-body .color-div {
