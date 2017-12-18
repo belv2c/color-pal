@@ -133,6 +133,31 @@
   text-align: center;
   background-color: #FFFFFF;
   color: black;
+  margin-bottom: 50px;
+  border: 1px solid lightgray; }
+
+.indiv-color1 {
+  font-size: 1.5em;
+  text-align: center;
+  background-color: #ff6600;
+  margin-bottom: 50px; }
+
+.indiv-color2 {
+  font-size: 1.5em;
+  text-align: center;
+  background-color: #f60;
+  margin-bottom: 50px; }
+
+.indiv-color3 {
+  font-size: 1.5em;
+  text-align: center;
+  background-color: #ffcc00;
+  margin-bottom: 50px; }
+
+.indiv-color4 {
+  font-size: 1.5em;
+  text-align: center;
+  background-color: #fc0;
   margin-bottom: 50px; }
 
 .panel-body {
