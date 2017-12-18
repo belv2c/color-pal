@@ -12,5 +12,94 @@
 }
 
 .info-div {
-	width: 50%;
+	
+
+
+
+	.main {
+		margin: 50px;
+	}
 }
+
+.second {
+	margin-bottom: 50px;
+}
+
+.third {
+	margin: 50px;
+}
+
+.hex-p {
+		font-size: 1.5em;
+		margin-bottom: 50px;
+		text-align: center;
+
+}
+
+.hex-title {
+	margin-bottom: 47px;
+	font-size: 3em;
+	text-align: center;
+}
+
+.sub-title {
+	margin-bottom: 47px;
+	font-size: 2em;
+	text-align: center;
+}
+
+.hexcol-gray1 {
+	font-size: 1.5em;
+	text-align: center;
+	background-color: #808080;
+	margin-bottom: 20px;
+}
+
+.hexcol-gray2 {
+	font-size: 1.5em;
+	text-align: center;
+	background-color: #D3D3D3;
+	margin-bottom: 20px;
+}
+
+.hexcol-gray3 {
+	font-size: 1.5em;
+	text-align: center;
+	background-color: #F5F5F5;
+	margin-bottom: 50px;
+}
+
+.hexex-rgb {
+	text-align: center;
+	font-size: 3.5em;
+	font-weight: 500;
+	margin-bottom: 50px;
+
+		.red {
+			color: red;
+		}
+
+			.green {
+				color: green;
+			}
+				.blue {
+					color: blue;
+				}
+}
+ 
+.hexcol-absence {
+	font-size: 1.5em;
+	text-align: center;
+	background-color: #000000;
+	color: white;
+	margin-bottom: 50px;
+}
+
+.hexcol-red {
+	font-size: 1.5em;
+	text-align: center;
+	background-color: #FFFFFF;
+	color: black;
+	margin-bottom: 50px;
+}
+
