@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("ViewCtrl", function($document, $location, $scope, $rootScope, ColorService, PaletteService, ColorApiService) {
+app.controller("ViewCtrl", function($document, $location, $scope, $rootScope, $routeParams, ColorService, PaletteService, ColorApiService) {
 
 $scope.apiPalettes = [];
 
@@ -41,6 +41,7 @@ $scope.apiPalettes = [];
 				console.log("error in deletePalette", err);
 			});
 		};
+
 
 // AFTER CLOSE BUTTON IS HIT, CALL THE API, COMBINE PALETTE AND COLOR DATA, THEN PRINT THEM TO THE PAGE
 
