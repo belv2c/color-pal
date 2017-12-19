@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("ViewCtrl", function($document, $location, $scope, $rootScope, $routeParams, ColorService, PaletteService, ColorApiService) {
+app.controller("ViewCtrl", function($document, $location, $scope, $rootScope, ColorService, PaletteService, ColorApiService) {
 
 $scope.apiPalettes = [];
 
@@ -48,13 +48,14 @@ $scope.apiPalettes = [];
 	$scope.eventApi = {
  		   onClose:  function(api, color, $event) {
     	ColorApiService.colorConfiguration(color).then((colorResults) => {
+    		
     		$scope.apiPalettes = colorResults.data;
     		colorResults.data.isFavorite = true;
     		colorResults.data.uid = $rootScope.uid;
 
     		let apiPaletteObject = PaletteService.createPaletteObjectFromApi(colorResults.data);
     		let colors = colorResults.data.colors;
-    		colors.creationDate = new Date();
+    		apiPaletteObject.creationDate = new Date();
 
     		PaletteService.addNewPalette(apiPaletteObject).then((paletteResults) => {
     			let paletteId = paletteResults.data.name;
