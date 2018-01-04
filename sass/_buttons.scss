@@ -53,6 +53,15 @@
     }
  }
 
+ .pal-gif {
+    width: 226px;
+    border-radius: 200px;
+ }
+
+ #login {
+    width: 319px;
+ }
+
 @keyframes colorChange {
   0% { color: hsl(0, 60%, 40%); }
   25% { color: hsl(90, 60%, 40%); }

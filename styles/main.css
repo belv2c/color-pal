@@ -45,6 +45,13 @@
     color: black;
     animation: colorChange 5s infinite; }
 
+.pal-gif {
+  width: 226px;
+  border-radius: 200px; }
+
+#login {
+  width: 319px; }
+
 @keyframes colorChange {
   0% {
     color: #a32929; }
@@ -56,6 +63,12 @@
     color: #6629a3; }
   100% {
     color: #a32929; } }
+
+.login-header {
+  font-weight: 200;
+  margin-top: -64px;
+  color: white;
+  margin-right: 58px; }
 
 .hard-title {
   font-family: proxima-nova, sans-serif;
