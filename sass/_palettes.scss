@@ -8,10 +8,14 @@
 
 		    .details {
 			    margin-top: 124px;
-    			margin-left: 0px;
+    			margin-right: 206px;
 			    font-size: 1.2em;
       }
    }
+}
+
+p {
+	margin: 0px 16px 10px;
 }
 
 .saved-details-div {
@@ -31,8 +35,7 @@
 	}
 
 .flip-container, .front, .back {
-	width: 320px;
-	height: 480px;
+	height: 1px;
 }
 
 /* flip speed goes here */
@@ -47,7 +50,7 @@
 .front, .back {
 	backface-visibility: hidden;
 
-	position: absolute;
+	position: inherit;
 	top: 0;
 	left: 0;
 }

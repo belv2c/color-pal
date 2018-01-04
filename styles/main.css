@@ -168,8 +168,11 @@
     margin-right: 6px; }
     .panel-body .color-div .details {
       margin-top: 124px;
-      margin-left: 0px;
+      margin-right: 206px;
       font-size: 1.2em; }
+
+p {
+  margin: 0px 16px 10px; }
 
 .saved-details-div {
   margin-top: 93px;
@@ -186,8 +189,7 @@
   transform: rotateY(180deg); }
 
 .flip-container, .front, .back {
-  width: 320px;
-  height: 480px; }
+  height: 1px; }
 
 /* flip speed goes here */
 .flipper {
@@ -198,7 +200,7 @@
 /* hide back of pane during swap */
 .front, .back {
   backface-visibility: hidden;
-  position: absolute;
+  position: inherit;
   top: 0;
   left: 0; }
 
