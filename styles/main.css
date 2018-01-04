@@ -165,18 +165,22 @@
   .panel-body .color-div {
     height: 150px;
     width: 16%;
-    margin-right: 6px; }
+    margin-right: 6px;
+    border-radius: 4px; }
     .panel-body .color-div .front-details {
       margin-top: 66px;
       margin-right: 206px;
       font-size: 1.2em;
       color: white; }
 
-.back-details {
-  color: white; }
-
 p {
   margin: 0px 23px 10px; }
+
+.back {
+  font-size: 0.8em;
+  margin: -11px -19px 0px -9px;
+  text-align: -webkit-center;
+  color: white; }
 
 .saved-details-div {
   margin-top: 93px;

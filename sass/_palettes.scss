@@ -5,6 +5,7 @@
 		height: 150px;
 	    width: 16%;
     	margin-right: 6px;
+    	border-radius: 4px;
 
 		    .front-details {
 			    margin-top: 66px;
@@ -15,12 +16,15 @@
    }
 }
 
-.back-details {
-	color: white;
-}
-
 p {
 	margin: 0px 23px 10px;
+}
+
+.back {
+	font-size: 0.8em;
+    margin: -11px -19px 0px -9px;
+    text-align: -webkit-center;
+    color: white;
 }
 
 .saved-details-div {

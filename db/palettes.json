@@ -32,6 +32,7 @@
 				"paletteId": "palette0",
 				"name": "midnight",
 				"hex": "#01122A",
+				"rgb": "rgb(2, 37, 84)",
 				"clean": "01122A",
 				"image": "http://www.thecolorapi.com/id?format=svg&hex=01122A",
 				"uid": "uBVpEzpTYTQ3oriwBLgdma5cTZn1"
@@ -40,6 +41,7 @@
 				"paletteId": "palette0",
 				"name": "cobalt",
 				"hex": "#0247A9",
+				"rgb": "rgb(2, 71, 169)",
 				"clean": "0247A9",
 				"image": "http://www.thecolorapi.com/id?format=svg&hex=0247A9",
 				"uid": "uBVpEzpTYTQ3oriwBLgdma5cTZn1"
@@ -48,6 +50,7 @@
 				"paletteId": "palette1",
 				"name": "milano red",
 				"hex": "#AE2204",
+				"rgb": "rgb(174, 34, 4)",
 				"clean": "AE2204",
 				"image": "http://www.thecolorapi.com/id?format=svg&hex=AE2204",
 				"uid": "uBVpEzpTYTQ3oriwBLgdma5cTZn1"
@@ -56,6 +59,7 @@
 				"paletteId": "palette1",
 				"name": "scarlet",
 				"hex": "#EE2E05",
+				"rgb": "rgb(238, 46, 5)",
 				"clean": "EE2E05",
 				"image": "http://www.thecolorapi.com/id?format=svg&hex=EE2E05",
 				"uid": "uBVpEzpTYTQ3oriwBLgdma5cTZn1"
@@ -64,6 +68,7 @@
 				"paletteId": "palette2",
 				"name": "pixie powder",
 				"hex": "#3E19A2",
+				"rgb": "rgb(62, 25, 162)",
 				"clean": "3E19A2",
 				"image": "http://www.thecolorapi.com/id?format=svg&hex=3E19A2",
 				"uid": "uBVpEzpTYTQ3oriwBLgdma5cTZn1"
@@ -72,6 +77,7 @@
 				"paletteId": "palette2",
 				"name": "green",
 				"hex": "#08EF0C",
+				"rgb": "rgb(8, 239, 12)",
 				"clean": "08EF0C",
 				"image": "http://www.thecolorapi.com/id?format=svg&hex=08EF0C",
 				"uid": "uBVpEzpTYTQ3oriwBLgdma5cTZn1"
@@ -80,6 +86,7 @@
 				"paletteId": "palette2",
 				"name": "bright turquoise",
 				"hex": "#06F9C1",
+				"rgb": "rgb(6, 249, 193)",
 				"clean": "06F9C1",
 				"image": "http://www.thecolorapi.com/id?format=svg&hex=06F9C1",
 				"uid": "uBVpEzpTYTQ3oriwBLgdma5cTZn1"

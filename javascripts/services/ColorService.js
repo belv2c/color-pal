@@ -23,6 +23,7 @@ const getColors = (userUid) => {
 			"paletteId": color.paletteId,
 			"name": color.name.value,
 			"hex": color.hex.value,
+			"rgb": color.rgb.value,
 			"clean": color.hex.clean,
 			"image": color.image.bare,
 			"uid": color.uid
