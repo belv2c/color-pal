@@ -6,16 +6,21 @@
 	    width: 16%;
     	margin-right: 6px;
 
-		    .details {
-			    margin-top: 124px;
+		    .front-details {
+			    margin-top: 66px;
     			margin-right: 206px;
 			    font-size: 1.2em;
+			    color: white;
       }
    }
 }
 
+.back-details {
+	color: white;
+}
+
 p {
-	margin: 0px 16px 10px;
+	margin: 0px 23px 10px;
 }
 
 .saved-details-div {
