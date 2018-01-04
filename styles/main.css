@@ -163,13 +163,11 @@
 .panel-body {
   -webkit-margin-after: 47px; }
   .panel-body .color-div {
-    height: 119px;
-    width: 138px;
-    margin-right: 3px; }
-    .panel-body .color-div .details-div {
+    width: 16%;
+    margin-right: 6px; }
+    .panel-body .color-div .details {
       margin-top: 124px;
       margin-left: 0px;
-      width: 100px;
       font-size: 1.2em; }
 
 .saved-details-div {
