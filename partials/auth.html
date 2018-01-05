@@ -1,10 +1,30 @@
-<div class="text-center col-md-12 col-md-offset-4" id="login">
-	
-	<div class="pal-gif">
-		<img class="pal-gif" src="https://i.imgflip.com/223mx6.gif">
-	</div>
-	<h1 class="login-header">Login</h1>
-	<button class="googleButton btn btn-lg btn-default" ng-click="authenticate()">
-	<img src="./images/google.png">
-	</button>
+<div class="text-center" id="login">
+		
+
+<div class="container login-container">
+  <div class="main-container login-card">
+  <h1 class="login-header">Login</h1>
+    <img class="pal-gif" src="https://i.imgflip.com/223mx6.gif">
+    <p class="profile-name" id="profile-name-card"></p>
+    <form class="signin">
+      <span id="authenicate" class="authentication-email"></span>
+      <input type="email" id="email" class="form-control animated bounceIn" for="inputSuccess3" placeholder="username" required autofocus> 
+      <input type="password" id="password" class="form-control animated bounceInUp" placeholder="password" required autofocus> 
+      <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">SIGN-IN</button>
+    </form>
+        
+          <h4>or</h4>
+          <button class="googleButton btn btn-lg btn-default" ng-click="authenticate()"><i class="fa fa-google" aria-hidden="true"></i>
+			</button>
+			<button class="login-button btn btn-lg btn-default"><i class="fa fa-facebook" aria-hidden="true"></i>
+			</button>
+			<button class="login-button btn btn-lg btn-default"><i class="fa fa-github-alt" aria-hidden="true"></i>
+			</button>
+			<button class="login-button  btn btn-lg btn-default"><i class="fa fa-instagram" aria-hidden="true"></i>
+			</button>
+
+
+     
+  </div><!--end main container-->
+</div>
 </div>

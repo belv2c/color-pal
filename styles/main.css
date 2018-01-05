@@ -46,11 +46,18 @@
     animation: colorChange 5s infinite; }
 
 .pal-gif {
-  width: 226px;
+  width: 150px;
   border-radius: 200px; }
 
 #login {
   width: 319px; }
+
+.login-container {
+  width: 400px;
+  margin-left: 450px; }
+
+.login-button {
+  border-style: none; }
 
 @keyframes colorChange {
   0% {
