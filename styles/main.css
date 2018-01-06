@@ -10,10 +10,13 @@
   border-style: none;
   margin-right: -99px; }
 
-.googleButton {
-  border-radius: 87px;
-  background-color: transparent;
-  border-style: none; }
+.form-control {
+  margin-bottom: 10px; }
+
+.btn-login {
+  color: #53e3a6;
+  background-color: white;
+  border-color: black; }
 
 .color-button {
   border-radius: 50px;
@@ -47,17 +50,20 @@
 
 .pal-gif {
   width: 150px;
-  border-radius: 200px; }
+  border-radius: 200px;
+  margin: 10px; }
 
 #login {
   width: 319px; }
 
 .login-container {
   width: 400px;
-  margin-left: 450px; }
+  margin-left: 450px;
+  margin-top: 70px; }
 
 .login-button {
-  border-style: none; }
+  border-style: none;
+  font-size: 2em; }
 
 @keyframes colorChange {
   0% {
@@ -73,9 +79,7 @@
 
 .login-header {
   font-weight: 200;
-  margin-top: -64px;
-  color: white;
-  margin-right: 58px; }
+  margin-left: -3px; }
 
 .hard-title {
   font-family: proxima-nova, sans-serif;
